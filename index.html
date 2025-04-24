@@ -1,170 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flipkart - Home</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2874f0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f3f6;
+      color: #212121;
+    }
+
+    header {
+      background-color: #2874f0;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    #navbar a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #navbar a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2, h3 {
+      color: #2874f0;
+    }
+
+    .pwa-controls {
+      background-color: white;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .pwa-controls button {
+      background-color: #2874f0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .pwa-controls button:hover {
+      background-color: #185dc0;
+    }
+
+    .cart-badge {
+      background-color: #ff6161;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 8px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .about-section, #services, #multimedia, #company-details, #contact {
+      margin: 40px 0;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .about-image img {
+      width: 280px;
+      border-radius: 8px;
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    td, th {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    #cart-section {
+      background-color: #fff;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.08);
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      background-color: #2874f0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #185dc0;
+    }
+
+    audio, iframe {
+      margin: 15px 0;
+      border-radius: 6px;
+      max-width: 100%;
+    }
+
+    footer {
+      background-color: #2874f0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer img {
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+
+    a {
+      color: #2874f0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .about-text summary {
+      cursor: pointer;
+      color: #2874f0;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2874f0;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar-logo img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #ffd700;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+main, header, section, footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+  </style>
 </head>
 <body>
-    <center>
-        <header>
-            <nav>
-                <ul>
-                    <header>
-                        <img src="flipkart.png" alt="Flipkart Logo" width="150" height="90">
-                    </header>
-                    <h2>
-                        <div id="navbar">  <a href="#home">Home</a>
-                            <a href="#about-us">About Us</a>   
-                            <a href="#services">Services</a>   
-                            <a href="#multimedia">Multimedia</a>   
-                            <a href="#contact">Contact Us</a>   
-                            </div>
-                  
-      
-                    </h2>
-                </ul>
-            </nav>
-        </header>
-    </center>
-
-    <main>
-        <center>
-        <section id="home">
-            <img src="./FLIPKART (2).png" alt="Home Image" width="70%" height="100%" style="display: block;">
-        </section>
-        </center>
-        <section id="about-us" class="about-section">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="./flipkart4.png" alt="About Flipkart">
-                </div>
-                <div class="about-text">
-                    <h1>About Us</h1>
-                    <p>Flipkart is one of India's leading e-commerce platforms. We offer a diverse range of products including electronics, fashion, home essentials, and more. Our mission is to provide customers with a seamless shopping experience through our user-friendly website and efficient delivery service.</p>
-                    <details>
-                        <summary>Read More</summary>
-                        <p>We leverage advanced technology and data analytics to provide personalized shopping recommendations and a secure online shopping environment. At Flipkart, we are committed to innovation and customer satisfaction.</p>
-                    </details>
-                </div>
+   
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="flipkart.png" alt="Flipkart Logo" width="120" height="60">
             </div>
-        </section>
-        
-        <section id="services">
-            
-            <h2>Services</h2>
-            <table>
-                <tr>
-                    <td>
-                        <img src="./electronics.png" alt="Electronics" width="170">
-                    </td>
-                    <td>
-                        <h3>Electronics</h3>
-                        <p>Wide range of electronics from top brands.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="./fashion.png" alt="Fashion" width="170">
-                    </td>
-                    <td>
-                        <h3>Fashion</h3>
-                        <p>Latest fashion trends and accessories.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="./home.png" alt="Home & Furniture" width="170">
-                    </td>
-                    <td>
-                        <h3>Home & Furniture</h3>
-                        <p>Quality furniture and home decor items.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="./books.png" alt="Books & More" width="170">
-                    </td>
-                    <td>
-                        <h3>Books & More</h3>
-                        <p>A vast collection of books and more.</p>
-                    </td>
-                </tr>
-            </table>
-        </section>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+  
+    
 
-        <section id="multimedia">
-            <h2>Multimedia</h2>
-            <audio controls id ="audio">
-                <source src="./Running It Down - Everet Almond.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-                
-            </audio>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VyK0jjMmojU?si=n55drPuMj-UH3lCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            
-        </section>
-    </main>
-
-    <section id="company-details" class="company-details">
-        <h2>Company Details</h2>
-        <table border="7">
-            <tr>
-                <th>Detail</th>
-                <th>Information</th>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Flipkart Private Ltd.</td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td>123 Main St, Anytown, USA</td>
-            </tr>
-            <tr>
-                <td>Contact</td>
-                <td>(123) 456-7890</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>info@flipkart.com</td>
-            </tr>
-            <tr>
-                <td>Website</td>
-                <td><a href="https://www.flipkart.com">www.flipkart.com</a></td>
-            </tr>
-        </table>
+  <main>
+    <section class="pwa-controls">
+      <h3>Flipkart PWA Features</h3>
+      <button id="notifyPermission">Request Notification Permission</button>
+      <button id="notifyButton">Test Notification</button>
+      <button id="syncButton">Test Background Sync</button>
+      <button onclick="displayCart()">View Cart <span id="cartCount" class="cart-badge">0</span></button>
     </section>
 
-    <center>
-        <section id="contact">
-            <footer>
-                <h3>Contact Us</h3>
-                <h3><mark>Follow us on social media:</mark></h3>
-                <pre><a href="https://www.facebook.com/flipkart"><img src="./Facebook.png"  width="30"></a> <a href="https://twitter.com/flipkart"><img src="./Twitter.png"  width="30"></a> <a href="https://www.linkedin.com/company/flipkart"><img src="./LinkedIn.png"  width="30"></a></pre>
-                <p>&copy; 2024 Flipkart</p>
-            </footer>
-        </section>
-    </center>
-    
-    <script>
-        window.addEventListener('load', () => {
-        registerSW();
-        });
-    
-        // Register the Service Worker
-        async function registerSW() {
-        if ('serviceWorker' in navigator) {
-            try {
-            await navigator
-                    .serviceWorker
-                    .register('serviceworker.js');
-            }
-            catch (e) {
-            console.log('SW registration failed');
-            }
-        }
-        }
-    </script>
+    <section id="home">
+      <img src="./FLIPKART (2).png" alt="Home Banner" style="width: 100%; border-radius: 8px;" />
+    </section>
+
+    <section id="about-us" class="about-section">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="./flipkart4.png" alt="About Flipkart" />
+        </div>
+        <div class="about-text">
+          <h1>About Us</h1>
+          <p>Flipkart is one of India's leading e-commerce platforms. We offer a diverse range of products including electronics, fashion, home essentials, and more.</p>
+          <details>
+            <summary>Read More</summary>
+            <p>We leverage advanced technology and data analytics to provide personalized shopping recommendations and a secure online shopping environment. At Flipkart, we are committed to innovation and customer satisfaction.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <table>
+        <tr>
+          <td><img src="./electronics.png" alt="Electronics" width="150" /></td>
+          <td>
+            <h3>Electronics</h3>
+            <p>Wide range of electronics from top brands.</p>
+            <button onclick="addToCart({id: 'elec1', name: 'Smartphone', price: 12999, quantity: 1})">Add to Cart</button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="./fashion.png" alt="Fashion" width="150" /></td>
+          <td>
+            <h3>Fashion</h3>
+            <p>Latest fashion trends and accessories.</p>
+            <button onclick="addToCart({id: 'fash1', name: 'T-Shirt', price: 599, quantity: 1})">Add to Cart</button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="./home.png" alt="Home & Furniture" width="150" /></td>
+          <td>
+            <h3>Home & Furniture</h3>
+            <p>Quality furniture and home decor items.</p>
+            <button onclick="addToCart({id: 'home1', name: 'Sofa Set', price: 24999, quantity: 1})">Add to Cart</button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="./books.png" alt="Books & More" width="150" /></td>
+          <td>
+            <h3>Books & More</h3>
+            <p>A vast collection of books and more.</p>
+            <button onclick="addToCart({id: 'book1', name: 'Novel', price: 299, quantity: 1})">Add to Cart</button>
+          </td>
+        </tr>
+      </table>
+
+      <div id="cart-section">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+      </div>
+    </section>
+
+    <section id="multimedia">
+      <h2>Multimedia</h2>
+      <audio controls>
+        <source src="./Running It Down - Everet Almond.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VyK0jjMmojU?si=n55drPuMj-UH3lCo" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="company-details">
+      <h2>Company Details</h2>
+      <table>
+        <tr><th>Detail</th><th>Information</th></tr>
+        <tr><td>Name</td><td>Flipkart Private Ltd.</td></tr>
+        <tr><td>Address</td><td>123 Main St, Anytown, USA</td></tr>
+        <tr><td>Contact</td><td>(123) 456-7890</td></tr>
+        <tr><td>Email</td><td>info@flipkart.com</td></tr>
+        <tr><td>Website</td><td><a href="https://www.flipkart.com">www.flipkart.com</a></td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h3>Contact Us</h3>
+    <p><mark>Follow us on social media:</mark></p>
+    <a href="https://www.facebook.com/flipkart"><img src="./Facebook.png" width="30" /></a>
+    <a href="https://twitter.com/flipkart"><img src="./Twitter.png" width="30" /></a>
+    <a href="https://www.linkedin.com/company/flipkart"><img src="./LinkedIn.png" width="30" /></a>
+    <p>&copy; 2024 Flipkart</p>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
